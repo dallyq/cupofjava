@@ -1,16 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css"></link>
+  <title>Library Practice Session</title>
+  <script src = "Book.js"></script>
+  <script src = "Patron.js"></script>
+  <script src = "Library.js"></script>
 </head>
+
 <body>
-    <main>
-    <h1>A cup of Java</h1>
-    <p>Mmmm.</p>
-    </main>
-    <script src="./script.js"></script>
+  <h1>Library Practice Session Project</h1>
+  <h5>Right click and use the developer tools to see the console.</h5>
 </body>
-</html>
+
+<script>
+  // our test code here
+  
+    const library = new Library();
+    const book = new Book('Harry Potter and the Sorcerer\'s Stone', 'J.K. Rowling', '978-0439708180');
+    const patron = new Patron('Dally Gibson', 'dallygibson@gmail.com');
+
+    library.addBook(book);
+    library.addPatron(patron);
+   
+    patron.checkOut(book);
+    patron.returnBook(book);
+    console.log(patron);
+  
+    patron.checkOut(book);
+    library.chargeFines();
+    console.log(patron);
+  
+</script>
